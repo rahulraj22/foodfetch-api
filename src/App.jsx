@@ -13,7 +13,7 @@ function App() {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': mykey,
+            'X-RapidAPI-Key': process.env.MY_KEY,
             'X-RapidAPI-Host': 'edamam-food-and-grocery-database.p.rapidapi.com'
         }
     };
