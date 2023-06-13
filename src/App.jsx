@@ -3,8 +3,6 @@ import './App.css'
 
 function App() {
     
-    var mykey = config.MY_KEY;
-    
     const [query, setQuery] = useState('');
     const [container, setContainer] = useState([]);
     const [endPoint, setEndpoint] = useState('');
