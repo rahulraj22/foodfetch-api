@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './App.css'
+import TypeWriter from './TypeWriter';
 
 function App() {
     
+    var mykey = config.MY_KEY;
     const [query, setQuery] = useState('');
     const [container, setContainer] = useState([]);
     const [endPoint, setEndpoint] = useState('');
@@ -11,7 +13,7 @@ function App() {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '9cc86c9cf8msh9c993aec6fe59f0p12ed99jsne00d391fbb73',
+            'X-RapidAPI-Key': mykey,
             'X-RapidAPI-Host': 'edamam-food-and-grocery-database.p.rapidapi.com'
         }
     };
@@ -38,10 +40,12 @@ function App() {
     }
 
     return (
-        <div className="App">
+        <>
+            <TypeWriter />
+            <div className="App">
             <h1>Search your favourite Food 🍕</h1>
             <form onSubmit={handleSubmit}>
-                <input onChange={handleChange} type="text" value={query} />
+                <input onChange={handleChange} type="text" value={query} placeholder='Enter search query preferably one word' />
                 <button type="submit">Submit</button>
             </form>
             <div className="element">
@@ -58,6 +62,8 @@ function App() {
             </div>
             {/* <img src="https://m.media-amazon.com/images/I/41Xe96WtZoL._SX300_SY300_QL70_FMwebp_.jpg" alt="" /> */}
         </div>
+        </>
+        
     )
 }
 
