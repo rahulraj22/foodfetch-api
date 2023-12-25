@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css'
 import TypeWriter from './TypeWriter';
-import { MY_KEY } from '../config';
 
 function App() {
     
