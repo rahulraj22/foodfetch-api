@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './App.css'
 import TypeWriter from './TypeWriter';
+import { MY_KEY } from '../config';
 
 function App() {
     
-    var mykey = config.MY_KEY;
+    // var mykey = config.MY_KEY;
     const [query, setQuery] = useState('');
     const [container, setContainer] = useState([]);
     const [endPoint, setEndpoint] = useState('');
@@ -14,7 +15,7 @@ function App() {
         method: 'GET',
         headers: {
             // 'X-RapidAPI-Key': mykey, // while local running
-            'X-RapidAPI-Key': process.env.MY_KEY, // remote running
+            'X-RapidAPI-Key': MY_KEY, // remote running
             'X-RapidAPI-Host': 'edamam-food-and-grocery-database.p.rapidapi.com'
         }
     };
